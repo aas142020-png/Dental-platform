@@ -1,0 +1,35 @@
+@import "tailwindcss";
+@import "@dental/design-tokens/tokens.css";
+
+/* Tailwind theme maps to the neutral design tokens (no brand decided yet).
+   Dark values exist in tokens.css under [data-theme="dark"] but are not activated in Sprint 1. */
+@theme inline {
+  --color-surface: var(--dp-color-surface);
+  --color-surface-muted: var(--dp-color-surface-muted);
+  --color-border: var(--dp-color-border);
+  --color-text: var(--dp-color-text);
+  --color-text-muted: var(--dp-color-text-muted);
+  --color-accent: var(--dp-color-accent);
+  --color-accent-contrast: var(--dp-color-accent-contrast);
+  --radius-sm: var(--dp-radius-sm);
+  --radius-md: var(--dp-radius-md);
+  --radius-lg: var(--dp-radius-lg);
+}
+
+@theme {
+  --breakpoint-tablet: 48rem;   /* 768px  */
+  --breakpoint-desktop: 80rem;  /* 1280px */
+}
+
+html {
+  background: var(--dp-color-surface);
+  color: var(--dp-color-text);
+  -webkit-text-size-adjust: 100%;
+}
+html[lang="en"] body { font-family: var(--dp-font-sans-latin); }
+/* Arabic gets a slightly larger size and taller line height than Latin. */
+html[lang="ar"] body { font-family: var(--dp-font-sans-arabic); font-size: 1.0625rem; line-height: 1.75; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}

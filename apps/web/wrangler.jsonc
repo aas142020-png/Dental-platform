@@ -1,0 +1,14 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "dental-platform",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2026-08-27",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "workers_dev": true,
+  "assets": { "directory": ".open-next/assets", "binding": "ASSETS" },
+  "services": [{ "binding": "WORKER_SELF_REFERENCE", "service": "dental-platform" }],
+  "vars": {
+    "NEXT_PUBLIC_SUPABASE_URL": "https://zdczzhpxmobupboxiheq.supabase.co",
+    "NEXT_PUBLIC_SUPABASE_ANON_KEY": "sb_publishable_K3MZOeL3vaByxLyQ8Hh28w_kFPk7Tni"
+  }
+}

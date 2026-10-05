@@ -1,0 +1,28 @@
+Dental Platform Step 5 - Cloudflare Workers / OpenNext
+
+This is a source repository archive. Extract it before deployment.
+Use Node.js 22 or 24 and pnpm 9.15.9.
+From the repository root:
+  pnpm install --frozen-lockfile
+  pnpm --filter @dental/web build:worker
+  cd apps/web
+  pnpm exec wrangler login
+  pnpm deploy
+
+Before the build, set these public build environment variables to the values
+already present in apps/web/wrangler.jsonc vars:
+  NEXT_PUBLIC_SUPABASE_URL
+  NEXT_PUBLIC_SUPABASE_ANON_KEY
+
+Do not deploy this archive as a static Cloudflare Pages ZIP.
+For Cloudflare Git builds, preserve the monorepo root and use:
+  Build command: pnpm --filter @dental/web build:worker
+  Deploy command: pnpm --filter @dental/web deploy
+
+After deployment, configure Supabase Auth Site URL and callback allowlist
+using the actual HTTPS production URL, then run production browser/auth checks.
+Step 5 is not yet certified ready for owner registration.
+
+Remote Supabase has 14 migrations. Do not reapply migration
+20261005213925_auth_onboarding. Do not run bootstrap_alpha_staff.sql,
+create the owner, grant staff roles, or begin Step 6.

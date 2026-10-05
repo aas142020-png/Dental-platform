@@ -1,0 +1,32 @@
+name: ci
+on: [push, pull_request]
+jobs:
+  web:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: pnpm }
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm check:logical
+      - run: pnpm check:i18n
+      - run: pnpm typecheck
+      - run: pnpm lint
+      - run: pnpm test          # unit tests; DB round-trip skipped (no DATABASE_URL)
+      - run: pnpm build
+  database:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: pnpm }
+      - uses: supabase/setup-cli@v1
+        with: { version: latest }
+      - run: pnpm install --frozen-lockfile
+      - run: supabase db start
+      - run: supabase test db
+      - name: TypeScript <-> database round-trip
+        run: pnpm --filter @dental/api-client test
+        env: { DATABASE_URL: "postgresql://postgres:postgres@127.0.0.1:54322/postgres" }

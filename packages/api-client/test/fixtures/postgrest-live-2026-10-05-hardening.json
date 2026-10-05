@@ -1,0 +1,13 @@
+{
+  "_source": "Real responses from https://zdczzhpxmobupboxiheq.supabase.co after migration 20261005205844_hardening and the non-clinical seed. Captured 2026-10-05 via pg_net. No tokens stored.",
+  "responses": [
+    { "probe": "anon_specialties",                "status": 200, "body": [] },
+    { "probe": "anon_topics_hidden",              "status": 200, "body": [] },
+    { "probe": "anon_seeded_topic_bundle",        "status": 200, "body": null },
+    { "probe": "auth_transition_not_found",       "status": 404, "body": { "code": "PT404", "details": null, "hint": "reason:not_found", "message": "topic_version 00000000-0000-4000-8000-000000000000 not found" } },
+    { "probe": "auth_transition_real_draft_role", "status": 403, "body": { "code": "42501", "details": null, "hint": "reason:role_required", "message": "role source_verifier required for draft -> source_verified" } },
+    { "probe": "auth_seeded_topic_bundle",        "status": 200, "body": null },
+    { "probe": "auth_drafts_hidden",              "status": 200, "body": [] },
+    { "probe": "auth_own_profile",                "status": 200, "body": [{ "preferred_locale": "ar" }] }
+  ]
+}

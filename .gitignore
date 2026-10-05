@@ -1,0 +1,14 @@
+node_modules
+.next
+.turbo
+dist
+.env*
+!.env.example
+supabase/.branches
+supabase/.temp
+*.log
+.DS_Store
+*.tsbuildinfo
+.open-next
+.wrangler
+.dev.vars*

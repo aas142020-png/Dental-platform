@@ -1,0 +1,18 @@
+{
+  "name": "@dental/i18n",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@dental/config": "workspace:*",
+    "typescript": "^5.8.0",
+    "vitest": "^3.2.4",
+    "next-intl": "^4.3.0"
+  }
+}

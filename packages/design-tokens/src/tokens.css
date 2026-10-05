@@ -1,0 +1,33 @@
+/* Neutral placeholder tokens. Mirrors src/index.ts. */
+:root {
+  --dp-color-surface: #ffffff;
+  --dp-color-surface-muted: #f4f5f7;
+  --dp-color-border: #d9dce1;
+  --dp-color-text: #1a1d23;
+  --dp-color-text-muted: #5b616e;
+  --dp-color-accent: #2f5d8c;
+  --dp-color-accent-contrast: #ffffff;
+  --dp-color-warning: #9a5b00;
+  --dp-color-danger: #b3261e;
+  --dp-color-success: #2e7d4f;
+  --dp-radius-sm: 4px;
+  --dp-radius-md: 8px;
+  --dp-radius-lg: 12px;
+  --dp-font-sans-latin: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --dp-font-sans-arabic: system-ui, "Segoe UI", Tahoma, sans-serif;
+}
+
+/* Dark values are defined but not activated in Sprint 1.
+   Activation later = add the [data-theme="dark"] attribute or a media query. */
+[data-theme="dark"] {
+  --dp-color-surface: #14161a;
+  --dp-color-surface-muted: #1d2026;
+  --dp-color-border: #30343c;
+  --dp-color-text: #eceef1;
+  --dp-color-text-muted: #a3a9b5;
+  --dp-color-accent: #8db4de;
+  --dp-color-accent-contrast: #0e1a27;
+  --dp-color-warning: #e0a84a;
+  --dp-color-danger: #f2867e;
+  --dp-color-success: #7cc79a;
+}

@@ -1,0 +1,1 @@
+{ "extends": "@dental/config/tsconfig.base.json", "include": ["src"] }
